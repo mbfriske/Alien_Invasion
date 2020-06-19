@@ -1,13 +1,15 @@
 import pygame
 
+image = 'images/ship.bmp'
+
 class Ship():
 
     def __init__(self, screen):
         """Initialize the ship and set its starting position."""
         self.screen = screen
 
-        # Load the ship image and get its rect.
-        self.image = pygame.image.laod('images.ship.bmp')
+        #Load the ship image and get its rect.
+        self.image = pygame.image.load(image)
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
@@ -16,5 +18,5 @@ class Ship():
         self.rect.bottom = self.screen_rect.bottom
 
     def blitme(self):
-        """Draw the ship at its cerrent location."""
+        """Draw the ship at its current location."""
         self.screen.blit(self.image, self.rect)
